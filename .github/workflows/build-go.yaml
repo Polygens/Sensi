@@ -28,7 +28,7 @@ jobs:
         run: docker build -t sensi:latest -t sensi:${{ steps.gitversion.outputs.semVer }} --build-arg VERSION=${{ steps.gitversion.outputs.semVer }} .
 
       - run: |
-          git tag -fa v${{ steps.build.outputs.semver }} -m "Version: ${{ steps.build.outputs.semver }}"
+          git tag -fa v${{ steps.gitversion.outputs.semVer }} -m "Version: ${{ steps.gitversion.outputs.semVer }}"
 
       - name: Update changelog
         run: |
@@ -47,5 +47,5 @@ jobs:
 
       - name: Tag the version on git
         run: |
-          git tag -fa v${{ steps.build.outputs.semver }} -m "Version: ${{ steps.build.outputs.semver }}"; \
-          git push origin v${{ steps.build.outputs.semver }}
+          git tag -fa v${{ steps.gitversion.outputs.semVer }} -m "Version: ${{ steps.gitversion.outputs.semVer }}"; \
+          git push origin v${{ steps.gitversion.outputs.semVer }}
