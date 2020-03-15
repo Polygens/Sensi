@@ -1,5 +1,12 @@
 Changelog
 
+## [0.3.1](https://github.com/Polygens/Sensi/compare/v0.3.0...v0.3.1) (2020-03-15)
+
+
+### Bug Fixes
+
+* **cicd:** Use correct variables ([002beb5](https://github.com/Polygens/Sensi/commit/002beb56ae7ac8e4fe7f78ec30e862298208ee49))
+
 # [0.3.0](https://github.com/Polygens/Sensi/compare/v0.2.2...v0.3.0) (2020-03-15)
 
 
