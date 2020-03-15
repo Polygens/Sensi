@@ -28,7 +28,7 @@ jobs:
           node-version: 12
 
       - name: Install dependencies
-        run: npm ci && npm install @semantic-release/git @semantic-release/changelog -D
+        run: npm install @semantic-release/git @semantic-release/changelog -g
 
       - name: Release
         env:
