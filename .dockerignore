@@ -1,4 +1,11 @@
+.git
+.github
+charts
+docs
+.gitignore
 .dockerignore
 dockerfile
 makefile
-.git
+.releaserc
+LICENSE
+README.md
