@@ -70,10 +70,6 @@ jobs:
           helm lint ./charts; \
           helm package --app-version ${{ steps.release.outputs.version }} --version ${{ steps.release.outputs.version }} ./charts; \
           helm repo index --url https://polygens.github.io/helm-chart/ .; \
-          mv index.yaml sensi-*.tgz ../helm-chart/
-
-      - uses: fregante/setup-git-token@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - run: cd ../helm-chart && git add . && git commit -m "Update $project helm chart" && git push origin master
+          mv index.yaml sensi-*.tgz ../helm-chart/; \
+          cd ../helm-chart && git config user.name "GitHub Actions" && git config user.email "actions@users.noreply.github.com"; \
+          git add . && git commit -m "Update $project helm chart" && git push origin master
