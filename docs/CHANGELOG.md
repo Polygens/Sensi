@@ -1,5 +1,17 @@
 Changelog
 
+# [0.5.0](https://github.com/Polygens/Sensi/compare/v0.4.0...v0.5.0) (2020-03-15)
+
+
+### Bug Fixes
+
+* **cicd:** Docker path ([dfd489b](https://github.com/Polygens/Sensi/commit/dfd489b809f8c6a41abf21f645ec1023127ce1af))
+
+
+### Features
+
+* **cicd:** Publish helm chart ([1103d6e](https://github.com/Polygens/Sensi/commit/1103d6e0de26f5650edfa3aea22fd51785d41374))
+
 # [0.4.0](https://github.com/Polygens/Sensi/compare/v0.3.2...v0.4.0) (2020-03-15)
 
 
