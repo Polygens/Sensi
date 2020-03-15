@@ -1,5 +1,12 @@
 Changelog
 
+## [0.5.9](https://github.com/Polygens/Sensi/compare/v0.5.8...v0.5.9) (2020-03-15)
+
+
+### Bug Fixes
+
+* **cicd:** Test other token ([03e0f56](https://github.com/Polygens/Sensi/commit/03e0f56c90e4093d2397a955f55aa6bec69d5c9f))
+
 ## [0.5.8](https://github.com/Polygens/Sensi/compare/v0.5.7...v0.5.8) (2020-03-15)
 
 
