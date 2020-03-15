@@ -1,5 +1,12 @@
 Changelog
 
+## [0.5.11](https://github.com/Polygens/Sensi/compare/v0.5.10...v0.5.11) (2020-03-15)
+
+
+### Bug Fixes
+
+* **cicd:** Append to helm index ([15ab3d2](https://github.com/Polygens/Sensi/commit/15ab3d20053b858c9080a6f02ec0c89fb5c9c861))
+
 ## [0.5.10](https://github.com/Polygens/Sensi/compare/v0.5.9...v0.5.10) (2020-03-15)
 
 
