@@ -1,5 +1,13 @@
 Changelog
 
+## [0.5.10](https://github.com/Polygens/Sensi/compare/v0.5.9...v0.5.10) (2020-03-15)
+
+
+### Bug Fixes
+
+* **build:** Remove unrequired files from docker build ([637d4c2](https://github.com/Polygens/Sensi/commit/637d4c23cf421eb5726226fd8aa01bf992814bb4))
+* **cicd:** Remove username references ([8876fbc](https://github.com/Polygens/Sensi/commit/8876fbc207fcfa2bb1779d85c2fdc2236271635c))
+
 ## [0.5.9](https://github.com/Polygens/Sensi/compare/v0.5.8...v0.5.9) (2020-03-15)
 
 
