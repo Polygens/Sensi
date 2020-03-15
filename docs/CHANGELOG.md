@@ -1,5 +1,12 @@
 Changelog
 
+## [0.5.3](https://github.com/Polygens/Sensi/compare/v0.5.2...v0.5.3) (2020-03-15)
+
+
+### Bug Fixes
+
+* **cicd:** Invalid quotes used ([61c6dd4](https://github.com/Polygens/Sensi/commit/61c6dd4a4cae638d5c743b98c98907d7cce7749d))
+
 ## [0.5.2](https://github.com/Polygens/Sensi/compare/v0.5.1...v0.5.2) (2020-03-15)
 
 
