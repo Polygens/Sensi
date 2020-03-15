@@ -1,5 +1,12 @@
 Changelog
 
+## [0.5.4](https://github.com/Polygens/Sensi/compare/v0.5.3...v0.5.4) (2020-03-15)
+
+
+### Bug Fixes
+
+* **cicd:** Fix git setup ([2484f8d](https://github.com/Polygens/Sensi/commit/2484f8ddb5ed971f9cbbda2976c4df5a74b12a45))
+
 ## [0.5.3](https://github.com/Polygens/Sensi/compare/v0.5.2...v0.5.3) (2020-03-15)
 
 
