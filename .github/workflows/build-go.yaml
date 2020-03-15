@@ -62,11 +62,12 @@ jobs:
           docker push "docker.pkg.github.com/$lowercase_user/$project/$project:latest"; \
           docker push "docker.pkg.github.com/$lowercase_user/$project/$project:${{ steps.release.outputs.version }}"
 
-      - uses: azure/setup-helm@v1
+      - name: Setup helm
+        uses: azure/setup-helm@v1
 
       - name: Package helm
         run: |
-          git clone https://github.com/Polygens/helm-chart.git ../helm-chart; \
+          git clone https://$user:${{ secrets.GITHUB_TOKEN }}@github.com/Polygens/helm-chart.git ../helm-chart; \
           helm lint ./charts; \
           helm package --app-version ${{ steps.release.outputs.version }} --version ${{ steps.release.outputs.version }} ./charts; \
           helm repo index --url https://polygens.github.io/helm-chart/ .; \
