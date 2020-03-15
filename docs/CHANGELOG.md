@@ -1,5 +1,12 @@
 Changelog
 
+## [0.5.6](https://github.com/Polygens/Sensi/compare/v0.5.5...v0.5.6) (2020-03-15)
+
+
+### Bug Fixes
+
+* **cicd:** Use correct folder ([22b5581](https://github.com/Polygens/Sensi/commit/22b5581b2f0272844370c14b0edd4bf6cb1448c6))
+
 ## [0.5.5](https://github.com/Polygens/Sensi/compare/v0.5.4...v0.5.5) (2020-03-15)
 
 
