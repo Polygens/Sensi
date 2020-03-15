@@ -12,28 +12,18 @@ jobs:
       - name: Check out code into the Go module directory
         uses: actions/checkout@v2
 
-      - name: Cache node modules
-        uses: actions/cache@v1
-        env:
-          cache-name: cache-semantic-node-modules
-        with:
-          path: ~/.npm # npm cache files are stored in `~/.npm` on Linux/macOS
-          key: ${{ runner.os }}-build-${{ env.cache-name }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}
-
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
           node-version: 12
 
       - name: Install dependencies
-        run: npm install @semantic-release/git @semantic-release/changelog -g
+        run: npm install @semantic-release/git @semantic-release/changelog
 
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release -e "$GITHUB_WORKSPACE/.github/config/.releaserc"
+        run: npx semantic-release
 
       - name: Build the Docker image
         id: build
