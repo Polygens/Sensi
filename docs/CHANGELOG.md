@@ -1,5 +1,12 @@
 Changelog
 
+## [0.5.1](https://github.com/Polygens/Sensi/compare/v0.5.0...v0.5.1) (2020-03-15)
+
+
+### Bug Fixes
+
+* **cicd:** Use latest version of helm ([cd83907](https://github.com/Polygens/Sensi/commit/cd8390718a5edcb86a77eb19d526407d303c2e7a))
+
 # [0.5.0](https://github.com/Polygens/Sensi/compare/v0.4.0...v0.5.0) (2020-03-15)
 
 
