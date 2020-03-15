@@ -1,5 +1,12 @@
 Changelog
 
+## [0.2.2](https://github.com/Polygens/Sensi/compare/v0.2.1...v0.2.2) (2020-03-15)
+
+
+### Bug Fixes
+
+* **cicd:** Output version to build step ([f1964fe](https://github.com/Polygens/Sensi/commit/f1964fecd2026c7ac0762ca466c591d7c05822fd))
+
 ## [0.2.1](https://github.com/Polygens/Sensi/compare/v0.2.0...v0.2.1) (2020-03-15)
 
 
