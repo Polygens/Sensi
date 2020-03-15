@@ -33,7 +33,7 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release -e .github/config/.releaserc
+        run: npx semantic-release -e "$GITHUB_WORKSPACE/.github/config/.releaserc"
 
       - name: Build the Docker image
         id: build
