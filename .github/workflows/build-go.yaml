@@ -15,13 +15,13 @@ jobs:
       - run: git fetch --prune --unshallow
 
       - name: Install GitVersion
-        uses: gittools/actions/gitversion/setup@v0.9
+        uses: gittools/actions/gitversion/setup@v1
         with:
           versionSpec: "5.1.x"
 
       - name: Use GitVersion
         id: gitversion
-        uses: gittools/actions/gitversion/execute@v0.9
+        uses: gittools/actions/gitversion/execute@v1
         with:
           useConfigFile: true
           configFilePath: "$GITHUB_WORKSPACE/.github/config/gitversion/GitVersion.yml"
