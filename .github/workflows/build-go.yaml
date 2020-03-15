@@ -3,8 +3,6 @@ name: Build Go
 on:
   push:
     branches: [master]
-  pull_request:
-    branches: [master]
 
 jobs:
   build:
@@ -16,16 +14,36 @@ jobs:
 
       - run: git fetch --prune --unshallow
 
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0.9
+        with:
+          versionSpec: "5.1.x"
+
+      - name: Use GitVersion
+        id: gitversion
+        uses: gittools/actions/gitversion/execute@v0.9
+
       - name: Build the Docker image
         id: build
+        run: docker build -t sensi:latest -t sensi:${{ steps.gitversion.outputs.semVer }} --build-arg VERSION=${{ steps.gitversion.outputs.semVer }} .
+
+      - run: |
+          git tag -fa v${{ steps.build.outputs.semver }} -m "Version: ${{ steps.build.outputs.semver }}"
+
+      - name: Update changelog
         run: |
-          docker build -t sensi:latest . | tee .logs; \
-          echo "::set-output name=semver::$(cat .logs | grep ^SEMVER | cut -d ":" -f2)"; \
-          rm .logs
+          curl -L https://github.com/git-chglog/git-chglog/releases/download/0.9.1/git-chglog_linux_amd64 -o git-chglog; \
+          chmod +x ./git-chglog; \
+          git-chglog -o CHANGELOG.md
 
       - uses: fregante/setup-git-token@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit release
+        run: |
+          git add CHANGELOG.md && git commit -m "chore(release): Version ${{ steps.gitversion.outputs.semVer }}"; \
+          git push
 
       - name: Tag the version on git
         run: |
