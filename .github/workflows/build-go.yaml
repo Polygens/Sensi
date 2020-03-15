@@ -72,4 +72,4 @@ jobs:
           helm repo index --url https://polygens.github.io/helm-chart/ .; \
           mv index.yaml sensi-*.tgz ../helm-chart/; \
           cd ../helm-chart; \
-          git add . && git commit -m “Update $project helm chart” && git push origin master
+          git add . && git commit -m "Update $project helm chart" && git push origin master
