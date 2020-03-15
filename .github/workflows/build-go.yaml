@@ -12,43 +12,16 @@ jobs:
       - name: Check out code into the Go module directory
         uses: actions/checkout@v2
 
-      - run: git fetch --prune --unshallow
-
-      - name: Install GitVersion
-        uses: gittools/actions/gitversion/setup@v1
+      - name: Semantic Release
+        id: release
+        uses: cycjimmy/semantic-release-action@v2
         with:
-          versionSpec: "5.1.x"
-
-      - name: Use GitVersion
-        id: gitversion
-        uses: gittools/actions/gitversion/execute@v1
-        with:
-          useConfigFile: true
-          configFilePath: "$GITHUB_WORKSPACE/.github/config/gitversion/GitVersion.yml"
+          extra_plugins: |
+            @semantic-release/changelog@3.0.0
+            @semantic-release/git
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build the Docker image
         id: build
-        run: docker build -t sensi:latest -t sensi:${{ steps.gitversion.outputs.semVer }} --build-arg VERSION=${{ steps.gitversion.outputs.semVer }} .
-
-      - uses: fregante/setup-git-token@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - run: |
-          git tag -fa v${{ steps.gitversion.outputs.semVer }} -m "Version: ${{ steps.gitversion.outputs.semVer }}"
-
-      - name: Update changelog
-        run: |
-          curl -L https://github.com/git-chglog/git-chglog/releases/download/0.9.1/git-chglog_linux_amd64 -o git-chglog; \
-          chmod +x ./git-chglog; \
-          ./git-chglog -o CHANGELOG.md -c .github/config/chglog/config.yml
-
-      - name: Commit release
-        run: |
-          git add CHANGELOG.md && git commit -m "chore(release): Version ${{ steps.gitversion.outputs.semVer }}"; \
-          git push
-
-      - name: Tag the version on git
-        run: |
-          git tag -fa v${{ steps.gitversion.outputs.semVer }} -m "Version: ${{ steps.gitversion.outputs.semVer }}"; \
-          git push origin v${{ steps.gitversion.outputs.semVer }}
+        run: docker build -t sensi:latest -t sensi:${{ steps.release.outputs.new_release_version }} --build-arg VERSION=${{ steps.release.outputs.new_release_version }} .
