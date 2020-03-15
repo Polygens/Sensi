@@ -1,5 +1,12 @@
 Changelog
 
+## [0.3.2](https://github.com/Polygens/Sensi/compare/v0.3.1...v0.3.2) (2020-03-15)
+
+
+### Bug Fixes
+
+* **cicd:** Fix path ([334c695](https://github.com/Polygens/Sensi/commit/334c6956659b18b28ca40453d9d4194f4ede54b3))
+
 ## [0.3.1](https://github.com/Polygens/Sensi/compare/v0.3.0...v0.3.1) (2020-03-15)
 
 
