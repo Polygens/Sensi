@@ -1,5 +1,12 @@
 Changelog
 
+# [0.3.0](https://github.com/Polygens/Sensi/compare/v0.2.2...v0.3.0) (2020-03-15)
+
+
+### Features
+
+* **cicd:** Publish docker image ([314c939](https://github.com/Polygens/Sensi/commit/314c939935a2626df37c6de5c3374fa7faddebb4))
+
 ## [0.2.2](https://github.com/Polygens/Sensi/compare/v0.2.1...v0.2.2) (2020-03-15)
 
 
