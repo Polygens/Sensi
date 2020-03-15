@@ -28,12 +28,12 @@ jobs:
 
       - name: Build the Docker image
         id: build
-        run: docker build -t docker.pkg.github.com/${{ github.repository }} /sensi:latest -t docker.pkg.github.com/${{ github.repository }} /sensi:${{ steps.release.outputs.version }} --build-arg VERSION=${{ steps.release.outputs.version }} .
+        run: docker build -t docker.pkg.github.com/${{ github.repository }}/sensi:latest -t docker.pkg.github.com/${{ github.repository }}/sensi:${{ steps.release.outputs.version }} --build-arg VERSION=${{ steps.release.outputs.version }} .
 
       - name: Docker login
         run: docker login docker.pkg.github.com -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.GITHUB_TOKEN}}
 
       - name: Publish to CR
         run: |
-          docker push "docker.pkg.github.com/${{ github.repository }} /sensi:latest"; \
-          docker push "docker.pkg.github.com/${{ github.repository }} /sensi:${{ steps.release.outputs.version }}"
+          docker push "docker.pkg.github.com/${{ github.repository }}/sensi:latest"; \
+          docker push "docker.pkg.github.com/${{ github.repository }}/sensi:${{ steps.release.outputs.version }}"
