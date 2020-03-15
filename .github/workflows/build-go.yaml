@@ -64,10 +64,6 @@ jobs:
 
       - uses: azure/setup-helm@v1
 
-      - uses: fregante/setup-git-token@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Package helm
         run: |
           git clone https://github.com/Polygens/helm-chart.git ../helm-chart; \
@@ -75,5 +71,10 @@ jobs:
           helm package --app-version ${{ steps.release.outputs.version }} --version ${{ steps.release.outputs.version }} ./charts; \
           helm repo index --url https://polygens.github.io/helm-chart/ .; \
           mv index.yaml sensi-*.tgz ../helm-chart/; \
-          cd ../helm-chart; \
-          git add . && git commit -m "Update $project helm chart" && git push origin master
+          cd ../helm-chart
+
+      - uses: fregante/setup-git-token@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - run: git add . && git commit -m "Update $project helm chart" && git push origin master
