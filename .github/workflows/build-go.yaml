@@ -70,6 +70,6 @@ jobs:
           helm lint ./charts; \
           helm package --app-version ${{ steps.release.outputs.version }} --version ${{ steps.release.outputs.version }} ./charts; \
           helm repo index --url https://polygens.github.io/helm-chart/ .; \
-          mv index.yaml sensi-*.tgz ../helm-chart/
+          mv index.yaml sensi-*.tgz ../helm-chart/; \
           cd ../helm-chart; \
           git add . && git commit -m “Update $project helm chart” && git push origin master
