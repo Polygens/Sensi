@@ -28,16 +28,17 @@ jobs:
 
       - run: |
           echo "::set-env name=user::$(echo ${{ github.repository }} | cut -d/ -f1)"; \
+          echo "::set-env name=lowercase_user::$(echo ${{ github.repository }} | cut -d/ -f1 | tr '[:upper:]' '[:lower:]')"; \
           echo "::set-env name=project::$(echo ${{ github.repository }} | cut -d/ -f2 | tr '[:upper:]' '[:lower:]')"
 
       - name: Build the Docker image
         id: build
-        run: docker build -t docker.pkg.github.com/$user/$project:latest -t docker.pkg.github.com/$user/$project:${{ steps.release.outputs.version }} --build-arg VERSION=${{ steps.release.outputs.version }} .
+        run: docker build -t docker.pkg.github.com/$lowercase_user/$project:latest -t docker.pkg.github.com/$lowercase_user/$project:${{ steps.release.outputs.version }} --build-arg VERSION=${{ steps.release.outputs.version }} .
 
       - name: Docker login
         run: docker login docker.pkg.github.com -u $user -p ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to CR
         run: |
-          docker push "docker.pkg.github.com/$user/$project:latest"; \
-          docker push "docker.pkg.github.com/$user/$project:${{ steps.release.outputs.version }}"
+          docker push "docker.pkg.github.com/$lowercase_user/$project:latest"; \
+          docker push "docker.pkg.github.com/$lowercase_user/$project:${{ steps.release.outputs.version }}"
