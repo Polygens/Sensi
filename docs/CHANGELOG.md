@@ -1,5 +1,12 @@
 Changelog
 
+## [0.5.2](https://github.com/Polygens/Sensi/compare/v0.5.1...v0.5.2) (2020-03-15)
+
+
+### Bug Fixes
+
+* **cicd:** Helm chart command invalid ([7fd029c](https://github.com/Polygens/Sensi/commit/7fd029cd972acac6fa1426a0c45a311567079d65))
+
 ## [0.5.1](https://github.com/Polygens/Sensi/compare/v0.5.0...v0.5.1) (2020-03-15)
 
 
