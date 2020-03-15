@@ -1,5 +1,12 @@
 Changelog
 
+## [0.5.7](https://github.com/Polygens/Sensi/compare/v0.5.6...v0.5.7) (2020-03-15)
+
+
+### Bug Fixes
+
+* **cicd:** Use single step for helm chart publish ([ee44503](https://github.com/Polygens/Sensi/commit/ee44503fb8e64c923b82590842e31868bbff0de6))
+
 ## [0.5.6](https://github.com/Polygens/Sensi/compare/v0.5.5...v0.5.6) (2020-03-15)
 
 
