@@ -24,7 +24,7 @@ jobs:
         uses: gittools/actions/gitversion/execute@v0.9
         with:
           useConfigFile: true
-          configFilePath: ./.github/config/gitversion/GitVersion.yml
+          configFilePath: "$GITHUB_WORKSPACE/.github/config/gitversion/GitVersion.yml"
 
       - name: Build the Docker image
         id: build
