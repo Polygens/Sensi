@@ -18,13 +18,14 @@ jobs:
           node-version: 12
 
       - name: Install dependencies
-        run: npm install @semantic-release/git @semantic-release/changelog
+        run: npm install @semantic-release/git @semantic-release/changelog @semantic-release/exec
 
       - name: Release
+        id: release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release
+        run: npx semantic-release --ci
 
       - name: Build the Docker image
         id: build
-        run: docker build -t sensi:latest -t sensi:${{ steps.release.outputs.new_release_version }} --build-arg VERSION=${{ steps.release.outputs.new_release_version }} .
+        run: docker build -t sensi:latest -t sensi:${{ steps.release.outputs.version }} --build-arg VERSION=${{ steps.release.outputs.version }} .
