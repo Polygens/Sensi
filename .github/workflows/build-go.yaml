@@ -64,6 +64,10 @@ jobs:
 
       - uses: azure/setup-helm@v1
 
+      - uses: fregante/setup-git-token@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Package helm
         run: |
           git clone https://github.com/Polygens/helm-chart.git ../helm-chart; \
