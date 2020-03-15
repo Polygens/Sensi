@@ -1,3 +1,14 @@
+Changelog
+
+## [0.2.1](https://github.com/Polygens/Sensi/compare/v0.2.0...v0.2.1) (2020-03-15)
+
+
+### Bug Fixes
+
+* **cicd:** Fix invalid npm install ([a387fbd](https://github.com/Polygens/Sensi/commit/a387fbdbb5931ec9948cfe41a3f45df22928a812))
+* **cicd:** Fix semantic release config ([254b472](https://github.com/Polygens/Sensi/commit/254b4729c6e8a9b0e8596912cbedc63efdc1f5c3))
+* **cicd:** Use correct path ([19ad832](https://github.com/Polygens/Sensi/commit/19ad832194be1afc8d83fd959336fc18f5325726))
+
 # [0.2.0](https://github.com/Polygens/Sensi/compare/v0.1.0...v0.2.0) (2020-03-15)
 
 
