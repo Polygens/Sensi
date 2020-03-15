@@ -1,5 +1,12 @@
 Changelog
 
+## [0.5.8](https://github.com/Polygens/Sensi/compare/v0.5.7...v0.5.8) (2020-03-15)
+
+
+### Bug Fixes
+
+* **cicd:** Invalid git config ([dac8aa0](https://github.com/Polygens/Sensi/commit/dac8aa0b9492988eec7f7804c86471685ffd137d))
+
 ## [0.5.7](https://github.com/Polygens/Sensi/compare/v0.5.6...v0.5.7) (2020-03-15)
 
 
