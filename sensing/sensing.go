@@ -9,13 +9,13 @@ import (
 	"github.com/polygens/Sensi/config"
 )
 
-// Init creates and starts the sensing
-func Init(cfg *config.Config) {
+// Start creates and starts the sensing
+func Start(cfg *config.Config) {
 	log.Debugf("Using pin: %d", cfg.SensorPin)
 
 	err := rpio.Open()
 	if err != nil {
-		log.Panicf("Failed to open io input: %s", err)
+		log.Fatalf("Failed to open io input: %s", err)
 	}
 	defer rpio.Close()
 

@@ -31,7 +31,7 @@ func main() {
 
 	log.SetLevel(logLvl)
 
-	sensing.Init(cfg)
+	sensing.Start(cfg)
 
 	r := mux.NewRouter()
 	sensing.SetupRoutes(r)
