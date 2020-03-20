@@ -1,3 +1,18 @@
+# Changelog
+
+# [0.6.0](https://github.com/Polygens/Sensi/compare/v0.5.11...v0.6.0) (2020-03-20)
+
+
+### Bug Fixes
+
+* **build:** pipeline now works for helm ([1d88632](https://github.com/Polygens/Sensi/commit/1d8863267a9b2ec4e0657a40d69fe1b17febfa96))
+
+
+### Features
+
+* **build:** add configmap ([5a2e59a](https://github.com/Polygens/Sensi/commit/5a2e59aba505c5fdaf13f78e81b5ddf4932bdf96))
+* **endpoints:** added health endpoints ([e9b80a5](https://github.com/Polygens/Sensi/commit/e9b80a5f8b7838c85d8cdb97228ee2ee5bc48c12))
+
 Changelog
 
 ## [0.5.11](https://github.com/Polygens/Sensi/compare/v0.5.10...v0.5.11) (2020-03-15)
