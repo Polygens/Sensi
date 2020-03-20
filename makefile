@@ -12,14 +12,11 @@ build:
 	CGO_ENABLED=0 go build -ldflags="-w -s -X main.version=$$VERSION" -o $$OUTPUT
 
 docker-build:
-	docker build -t sensi --build-arg VERSION=$$VERSION .
+	docker build -t sensi -t registry.local:5000/sensi:latest -t docker.pkg.github.com/polygens/sensi/sensi:latest --build-arg VERSION=$$VERSION .
 
-run: docker-build
-	docker build -t sensi --build-arg VERSION=$$VERSION .
-	docker run sensi -p 8080:8080
-
-quick: build
+run: setup build
 	Sensi 
 
-helm: docker-build
-	helm install sensi ./charts
+helm: setup docker-build
+	docker push registry.local:5000/sensi:latest
+	helm upgrade -i sensi ./charts --set image.repository=registry.local:5000/sensi --set image.pullPolicy=Always
