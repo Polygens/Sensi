@@ -1,5 +1,6 @@
 export VERSION := $(shell git describe --tags --abbrev=0 &> /dev/null):$(shell git rev-parse --abbrev-ref HEAD &> /dev/null)
-export OUTPUT := $(shell echo $$HOME/go/bin)
+export OUTPUT := $(shell echo $$HOME/go/bin/Sensi)
+
 
 build:
 	CGO_ENABLED=0 go build -ldflags="-w -s -X main.version=$$VERSION" -o $$OUTPUT
