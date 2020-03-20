@@ -1,10 +1,8 @@
 package sensing
 
 import (
-	"net/http"
 	"time"
 
-	"github.com/prometheus/client_golang/prometheus/promhttp"
 	log "github.com/sirupsen/logrus"
 	"github.com/stianeikeland/go-rpio"
 
@@ -29,8 +27,6 @@ func Init(cfg *config.Config) {
 	log.Infof("Output: %d", res)
 
 	go backgroundTask()
-
-	http.Handle("/metrics", promhttp.Handler())
 }
 
 func backgroundTask() {

@@ -6,6 +6,7 @@ import (
 	"path/filepath"
 	"strconv"
 
+	"github.com/gorilla/mux"
 	log "github.com/sirupsen/logrus"
 
 	"github.com/polygens/Sensi/config"
@@ -32,5 +33,7 @@ func main() {
 
 	sensing.Init(cfg)
 
-	log.Fatal(http.ListenAndServe(":"+strconv.Itoa(cfg.Port), nil))
+	r := mux.NewRouter()
+	sensing.SetupRoutes(r)
+	log.Fatal(http.ListenAndServe(":"+strconv.Itoa(cfg.Port), r))
 }
