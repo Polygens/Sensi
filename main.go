@@ -4,33 +4,33 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"strconv"
 
 	log "github.com/sirupsen/logrus"
-	"github.com/spf13/viper"
 
+	"github.com/polygens/Sensi/config"
 	"github.com/polygens/Sensi/sensing"
 )
 
 var version string
+var cfg *config.Config
 
 func main() {
 	log.Infof("Starting %s version: %s", filepath.Base(os.Args[0]), version)
 
-	viper.SetConfigName("defaults")
-	viper.AddConfigPath(".")
-	err := viper.ReadInConfig()
+	cfg, err := config.LoadConfig()
 	if err != nil {
-		log.Fatalf("Fatal error config file: %s \n", err)
+		log.Fatalf("Failed to load config: %s", err)
 	}
 
-	logLvl, err := log.ParseLevel(viper.GetString("env"))
+	logLvl, err := log.ParseLevel(cfg.LogLevel)
 	if err != nil {
-		log.Fatalf("Failed to set log level: %s \n", err)
+		log.Fatalf("Failed to set log level: %s", err)
 	}
 
 	log.SetLevel(logLvl)
 
-	sensing.Init()
+	sensing.Init(cfg)
 
-	log.Fatal(http.ListenAndServe(viper.GetString("address"), nil))
+	log.Fatal(http.ListenAndServe(":"+strconv.Itoa(cfg.Port), nil))
 }

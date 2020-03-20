@@ -6,17 +6,14 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	log "github.com/sirupsen/logrus"
-	"github.com/spf13/viper"
 	"github.com/stianeikeland/go-rpio"
+
+	"github.com/polygens/Sensi/config"
 )
 
-var inputPinID int
-
 // Init creates and starts the sensing
-func Init() {
-	inputPinID = viper.GetInt("sensorPin")
-
-	log.Debugf("Using pin: %d", viper.GetInt("sensorPin"))
+func Init(cfg *config.Config) {
+	log.Debugf("Using pin: %d", cfg.SensorPin)
 
 	err := rpio.Open()
 	if err != nil {
@@ -24,7 +21,7 @@ func Init() {
 	}
 	defer rpio.Close()
 
-	pin := rpio.Pin(inputPinID)
+	pin := rpio.Pin(cfg.SensorPin)
 
 	pin.Input()       // Input mode
 	res := pin.Read() // Read state from pin (High / Low)
