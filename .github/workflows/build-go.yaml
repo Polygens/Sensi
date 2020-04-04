@@ -52,14 +52,14 @@ jobs:
         run: |
           docker push "docker.pkg.github.com/$lowercase_user/$project/$project:latest"; \
           docker push "docker.pkg.github.com/$lowercase_user/$project/$project:${{ steps.release.outputs.version }}"
-      # - name: Setup helm
-      #   uses: azure/setup-helm@v1
-      # - name: Package helm
-      #   run: |
-      #     git clone https://$user:${{ secrets.token }}@github.com/$user/helm-chart.git ../helm-chart; \
-      #     helm lint ./charts; \
-      #     helm package --app-version ${{ steps.release.outputs.version }} --version ${{ steps.release.outputs.version }} ./charts; \
-      #     helm repo index --url https://$(lowercase_user).github.io/helm-chart/ --merge ../helm-chart/index.yaml .; \
-      #     mv index.yaml $project-*.tgz ../helm-chart/; \
-      #     cd ../helm-chart && git config user.name "GitHub Actions" && git config user.email "actions@users.noreply.github.com"; \
-      #     git add . && git commit -m "Update $project helm chart" && git push origin master
+      - name: Setup helm
+        uses: azure/setup-helm@v1
+      - name: Package helm
+        run: |
+          git clone https://$user:${{ secrets.token }}@github.com/$user/helm-chart.git ../helm-chart; \
+          helm lint ./charts; \
+          helm package --app-version ${{ steps.release.outputs.version }} --version ${{ steps.release.outputs.version }} ./charts; \
+          helm repo index --url https://$(lowercase_user).github.io/helm-chart/ --merge ../helm-chart/index.yaml .; \
+          mv index.yaml $project-*.tgz ../helm-chart/; \
+          cd ../helm-chart && git config user.name "GitHub Actions" && git config user.email "actions@users.noreply.github.com"; \
+          git add . && git commit -m "Update $project helm chart" && git push origin master
