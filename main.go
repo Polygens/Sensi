@@ -9,8 +9,8 @@ import (
 	"github.com/gorilla/mux"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/polygens/Sensi/config"
-	"github.com/polygens/Sensi/sensing"
+	"github.com/polygens/sensi/config"
+	"github.com/polygens/sensi/sensing"
 )
 
 var version string

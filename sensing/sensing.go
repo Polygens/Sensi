@@ -6,7 +6,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/stianeikeland/go-rpio"
 
-	"github.com/polygens/Sensi/config"
+	"github.com/polygens/sensi/config"
 )
 
 // Start creates and starts the sensing

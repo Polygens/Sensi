@@ -1,6 +1,6 @@
-module github.com/polygens/Sensi
+module github.com/polygens/sensi
 
-go 1.13
+go 1.14
 
 require (
 	github.com/go-playground/universal-translator v0.17.0 // indirect
