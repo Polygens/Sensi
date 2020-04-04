@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.7.1](https://github.com/Polygens/sensi/compare/v0.7.0...v0.7.1) (2020-04-04)
+
+
+### Bug Fixes
+
+* **cicd:** build step needs test to succeed ([bbb08d3](https://github.com/Polygens/sensi/commit/bbb08d3dc6ea8bf944e309d6be4620bf6be1d792))
+* **cicd:** enable helm ([5e40e8a](https://github.com/Polygens/sensi/commit/5e40e8a160c3ad850617c83772a122e8f20e8265))
+* **cicd:** revert docker build ([a18822c](https://github.com/Polygens/sensi/commit/a18822cbb4ce2be9f7c8ecb758b7579a75ca9787))
+
 # [0.7.0](https://github.com/Polygens/sensi/compare/v0.6.0...v0.7.0) (2020-04-04)
 
 
