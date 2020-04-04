@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.2](https://github.com/Polygens/sensi/compare/v0.7.1...v0.7.2) (2020-04-04)
+
+
+### Bug Fixes
+
+* **cicd:** use only prod docker build ([2fe48b9](https://github.com/Polygens/sensi/commit/2fe48b991f869f1825b90d4f8fcb9adf51bdbfaa))
+
 ## [0.7.1](https://github.com/Polygens/sensi/compare/v0.7.0...v0.7.1) (2020-04-04)
 
 
