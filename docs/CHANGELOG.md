@@ -1,5 +1,17 @@
 # Changelog
 
+# [0.7.0](https://github.com/Polygens/sensi/compare/v0.6.0...v0.7.0) (2020-04-04)
+
+
+### Bug Fixes
+
+* **cicd:** enable docker build ([b00cc48](https://github.com/Polygens/sensi/commit/b00cc48a7a82cd76aaa52ad6f7cfedb9c95fff40))
+
+
+### Features
+
+* **cicd:** refactor build scripts ([d442ae6](https://github.com/Polygens/sensi/commit/d442ae66db6789d591b77abbba8d39a7dc56c6fc))
+
 # [0.6.0](https://github.com/Polygens/Sensi/compare/v0.5.11...v0.6.0) (2020-03-20)
 
 
