@@ -44,9 +44,5 @@ helm: setup dev-build setup-helm
 	@docker push registry.local:5000/$$PROJECT:latest
 	helm upgrade -i $$PROJECT ./charts --set image.repository=registry.local:5000/$$PROJECT --set image.pullPolicy=Always --wait --set ingress.enabled=true
 
-# Production
-prod-build:
-	@docker build --target prod -t docker.pkg.github.com/polygens/$$PROJECT/$$PROJECT:latest --build-arg VERSION=$$VERSION --build-arg APP=$$PROJECT .
-
 logs:
 	@kubectl logs -l app.kubernetes.io/name=$$PROJECT -f

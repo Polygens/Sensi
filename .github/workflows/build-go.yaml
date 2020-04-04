@@ -44,7 +44,8 @@ jobs:
           echo "::set-env name=lowercase_user::$(echo ${{ github.repository }} | cut -d/ -f1 | tr '[:upper:]' '[:lower:]')"; \
           echo "::set-env name=project::$(echo ${{ github.repository }} | cut -d/ -f2 | tr '[:upper:]' '[:lower:]')"
       - name: Build the Docker image
-        run: make prod-build
+        id: build
+        run: docker build -t docker.pkg.github.com/$lowercase_user/$project/$project:latest -t docker.pkg.github.com/$lowercase_user/$project/$project:${{ steps.release.outputs.version }} --build-arg VERSION=${{ steps.release.outputs.version }} --build-arg APP=$project .
       - name: Docker login
         run: docker login docker.pkg.github.com -u $user -p ${{ secrets.GITHUB_TOKEN }}
       - name: Publish to CR
