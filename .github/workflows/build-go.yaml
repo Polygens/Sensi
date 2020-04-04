@@ -23,6 +23,7 @@ jobs:
     if: github.event_name == 'push'
     name: Build and release
     runs-on: ubuntu-latest
+    needs: [test]
     steps:
       - name: Check out code into the Go module directory
         uses: actions/checkout@v2
