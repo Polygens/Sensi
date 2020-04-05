@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.7](https://github.com/Polygens/sensi/compare/v0.8.6...v0.8.7) (2020-04-05)
+
+
+### Bug Fixes
+
+* **cicd:** checkout code in helm job ([725ade2](https://github.com/Polygens/sensi/commit/725ade2d88ef942b999085991b34755c0be2293f))
+
 ## [0.8.6](https://github.com/Polygens/sensi/compare/v0.8.5...v0.8.6) (2020-04-05)
 
 
