@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.5](https://github.com/Polygens/sensi/compare/v0.7.4...v0.7.5) (2020-04-05)
+
+
+### Bug Fixes
+
+* **cicd:** allow build to pass ([a38bc3b](https://github.com/Polygens/sensi/commit/a38bc3b38d2f80e7de82b6355b53a7d519555d51))
+
 ## [0.7.4](https://github.com/Polygens/sensi/compare/v0.7.3...v0.7.4) (2020-04-05)
 
 
