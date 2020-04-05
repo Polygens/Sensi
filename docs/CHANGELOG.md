@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.8.2](https://github.com/Polygens/sensi/compare/v0.8.1...v0.8.2) (2020-04-05)
+
+
+### Bug Fixes
+
+* **cicd:** setup helm config ([316b5f4](https://github.com/Polygens/sensi/commit/316b5f4d0ff2d4ae7ff168380a96bc0d25bb0a97))
+* **semantic-release:** no prefer offline ([76e124d](https://github.com/Polygens/sensi/commit/76e124d64d9cea9f86c0a9542745336548b8cf44))
+
 ## [0.8.1](https://github.com/Polygens/sensi/compare/v0.8.0...v0.8.1) (2020-04-05)
 
 
