@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.7.4](https://github.com/Polygens/sensi/compare/v0.7.3...v0.7.4) (2020-04-05)
+
+
+### Bug Fixes
+
+* **yarn:** install all in one step ([f80d659](https://github.com/Polygens/sensi/commit/f80d6597cdd3d9eb84d78ae22f21709b3b1083df))
+* **yarn:** invalid yarn command ([c069f49](https://github.com/Polygens/sensi/commit/c069f49cf3cf9094196f1a7d1a4e6f44d8c11c58))
+* **yarn:** remove --prod ([2f0511b](https://github.com/Polygens/sensi/commit/2f0511bcb123080e56643535f1f280df9daf969c))
+
+
+### Performance Improvements
+
+* **node:** use yarn ([6390a65](https://github.com/Polygens/sensi/commit/6390a65755431d04dd240ab5b13531aa988382c1))
+
 ## [0.7.3](https://github.com/Polygens/sensi/compare/v0.7.2...v0.7.3) (2020-04-05)
 
 
