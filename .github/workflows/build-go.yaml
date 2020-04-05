@@ -42,7 +42,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn
       - name: Install dependencies
-        run: NODE_ENV=production yarn add @semantic-release/git @semantic-release/changelog @semantic-release/exec semantic-release --no-lockfile
+        run: NODE_ENV=production yarn global add @semantic-release/git @semantic-release/changelog @semantic-release/exec semantic-release --no-lockfile --prefer-offline
       - name: Release
         id: release
         env:
