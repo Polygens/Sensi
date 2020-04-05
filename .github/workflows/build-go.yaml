@@ -42,12 +42,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn
       - name: Install dependencies
-        run: yarn add @semantic-release/git @semantic-release/changelog @semantic-release/exec --prod
+        run: NODE_ENV=production yarn add @semantic-release/git @semantic-release/changelog @semantic-release/exec --no-lockfile
       - name: Release
         id: release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: yarn create --prefer-offline --prod semantic-release --ci
+        run: NODE_ENV=production yarn create semantic-release --ci
       - name: Set env variables
         run: |
           echo "::set-env name=user::$(echo ${{ github.repository }} | cut -d/ -f1)"; \
