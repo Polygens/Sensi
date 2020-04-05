@@ -61,7 +61,8 @@ jobs:
         run: |
           docker push "docker.pkg.github.com/$lowercase_user/$project/$project:latest"; \
           docker push "docker.pkg.github.com/$lowercase_user/$project/$project:${{ steps.release.outputs.version }}"
-      - run: ${{ steps.release.outputs.version }} > version
+      - name: Store version
+        run: echo ${{ steps.release.outputs.version }} > version
       - name: Upload version
         uses: actions/upload-artifact@v1
         with:
