@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.4](https://github.com/Polygens/sensi/compare/v0.8.3...v0.8.4) (2020-04-05)
+
+
+### Bug Fixes
+
+* **cicd:** version export was not working ([4136cae](https://github.com/Polygens/sensi/commit/4136caea3160b3b1a182a85829e654fac95baee2))
+
 ## [0.8.3](https://github.com/Polygens/sensi/compare/v0.8.2...v0.8.3) (2020-04-05)
 
 
