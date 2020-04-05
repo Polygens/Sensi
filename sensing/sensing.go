@@ -3,30 +3,48 @@ package sensing
 import (
 	"time"
 
+	"github.com/gorilla/mux"
 	log "github.com/sirupsen/logrus"
-	"github.com/stianeikeland/go-rpio"
+	"periph.io/x/periph/conn/gpio"
 
 	"github.com/polygens/sensi/config"
 )
 
-// Start creates and starts the sensing
-func Start(cfg *config.Config) {
+type App struct {
+	router *mux.Router
+	cfg    *config.Config
+	dht    DHT
+}
+
+type DHT struct {
+	pin         gpio.PinIO
+	numErrors   int
+	lastRead    time.Time
+	temperature float32
+	humidity    float32
+}
+
+var app *App
+
+// Init creates and starts the sensing
+func Init(router *mux.Router, cfg *config.Config) {
+	dht := DHT{}
+	app = &App{router, cfg, dht}
+
 	log.Debugf("Using pin: %d", cfg.SensorPin)
 
-	err := rpio.Open()
-	if err != nil {
-		log.Fatalf("Failed to open io input: %s", err)
-	}
-	defer rpio.Close()
+	// _, err := host.Init()
+	// if err != nil {
+	// 	log.Fatalf("Failed to init host: %s", err)
+	// }
 
-	pin := rpio.Pin(cfg.SensorPin)
+	// dht.pin = gpioreg.ByName(strconv.Itoa(cfg.SensorPin))
+	// if dht.pin == nil {
+	// 	log.Fatalf("Failed to find: %s", cfg.SensorPin)
+	// }
 
-	pin.Input()       // Input mode
-	res := pin.Read() // Read state from pin (High / Low)
-
-	log.Infof("Output: %d", res)
-
-	go backgroundTask()
+	// go backgroundTask()
+	app.setupRoutes()
 }
 
 func backgroundTask() {

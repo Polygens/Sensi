@@ -14,7 +14,6 @@ import (
 )
 
 var version string
-var cfg *config.Config
 
 func main() {
 	log.Infof("Starting %s version: %s", filepath.Base(os.Args[0]), version)
@@ -31,9 +30,9 @@ func main() {
 
 	log.SetLevel(logLvl)
 
-	sensing.Start(cfg)
-
 	r := mux.NewRouter()
-	sensing.SetupRoutes(r)
+
+	sensing.Init(r, cfg)
+
 	log.Fatal(http.ListenAndServe(":"+strconv.Itoa(cfg.Port), r))
 }
