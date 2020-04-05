@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.8.1](https://github.com/Polygens/sensi/compare/v0.8.0...v0.8.1) (2020-04-05)
+
+
+### Bug Fixes
+
+* **semantic-release:** use binary ([90eba87](https://github.com/Polygens/sensi/commit/90eba874a77b3619bf0897a39af52707867fc859))
+* **semantic-release:** use global bin ([ef9c7f2](https://github.com/Polygens/sensi/commit/ef9c7f2d86282683de310b93da3e1e08590f17bf))
+* **semantic-release:** use other path ([2659fff](https://github.com/Polygens/sensi/commit/2659fff7b723cd8663ceebe7b8043bc295989c70))
+* **yarn:** install global and prefer offline ([2ed1a7b](https://github.com/Polygens/sensi/commit/2ed1a7b9a2dd2c88dc90ee0b703e085a108af52d))
+
 # [0.8.0](https://github.com/Polygens/sensi/compare/v0.7.5...v0.8.0) (2020-04-05)
 
 
