@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.3](https://github.com/Polygens/sensi/compare/v0.7.2...v0.7.3) (2020-04-05)
+
+
+### Bug Fixes
+
+* **cicd:** use correct target ([d897a8b](https://github.com/Polygens/sensi/commit/d897a8b0a3051dd543e840769e88309af2d74687))
+
 ## [0.7.2](https://github.com/Polygens/sensi/compare/v0.7.1...v0.7.2) (2020-04-04)
 
 
