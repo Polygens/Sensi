@@ -1,5 +1,17 @@
 # Changelog
 
+# [0.8.0](https://github.com/Polygens/sensi/compare/v0.7.5...v0.8.0) (2020-04-05)
+
+
+### Bug Fixes
+
+* **cicd:** yaml format ([9133361](https://github.com/Polygens/sensi/commit/9133361e4bd960788b46ebea2bb0f73c0dfb8e2d))
+
+
+### Features
+
+* **cicd:** move helm to other build step ([8f09e70](https://github.com/Polygens/sensi/commit/8f09e70977441f83de28b06262459e6aa7fcf305))
+
 ## [0.7.5](https://github.com/Polygens/sensi/compare/v0.7.4...v0.7.5) (2020-04-05)
 
 
