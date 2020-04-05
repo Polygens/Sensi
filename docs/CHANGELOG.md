@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.6](https://github.com/Polygens/sensi/compare/v0.8.5...v0.8.6) (2020-04-05)
+
+
+### Bug Fixes
+
+* **cicd:** use correct path for version ([e5bf7cb](https://github.com/Polygens/sensi/commit/e5bf7cba65d65ac3826e0f4459ca984f364da3f9))
+
 ## [0.8.5](https://github.com/Polygens/sensi/compare/v0.8.4...v0.8.5) (2020-04-05)
 
 
