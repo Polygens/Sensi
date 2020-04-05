@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.3](https://github.com/Polygens/sensi/compare/v0.8.2...v0.8.3) (2020-04-05)
+
+
+### Bug Fixes
+
+* **cicd:** revert user ([71fa6cc](https://github.com/Polygens/sensi/commit/71fa6cc75a91e9bb0a5ecbeb69df669c92fdaea3))
+
 ## [0.8.2](https://github.com/Polygens/sensi/compare/v0.8.1...v0.8.2) (2020-04-05)
 
 
