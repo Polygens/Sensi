@@ -7,8 +7,8 @@ require (
 	github.com/go-playground/validator v9.31.0+incompatible
 	github.com/gorilla/mux v1.7.4
 	github.com/leodido/go-urn v1.2.0 // indirect
-	github.com/prometheus/client_golang v1.5.1
-	github.com/sirupsen/logrus v1.5.0
+	github.com/prometheus/client_golang v1.11.1
+	github.com/sirupsen/logrus v1.6.0
 	github.com/spf13/viper v1.6.2
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 	periph.io/x/periph v3.6.2+incompatible
